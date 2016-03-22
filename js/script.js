@@ -6,11 +6,11 @@ myApp.controller("myController",function($scope)
   $scope.message = "My first Angular Model";
   // object in Model
   var employee = {
-    firstName : "bhupem",
-    secondName : "negi"
-  }
+    firstName : "Bhupendra",
+    secondName : "Negi"
+  };
   $scope.employee = employee;
-})
+});
 
 // another controller to load images with ng-src directive
 myApp.controller("ImgController", function($scope){

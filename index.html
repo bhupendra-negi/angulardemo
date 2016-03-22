@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>my first angular demo</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
   </head>
@@ -41,21 +41,62 @@
           Capital :
           {{country.capital}}
         </p>
-        <img ng-src={{country.image}} alt="{{country.name + ' Flag'}}" style="height:100px;width:200px"/>
+        <img alt="{{country.name + ' Flag'}}" ng-src="{{country.image}}" style="height:100px;width:200px"/>
       </div>
-     <div class="" ng-controller="myController">
-       <hr>
-       <h4>
-         2 way data binding via : ng-model</h4>
-       <input type="text" ng-model="message"/>
-       {{message}}
+      <div class="" ng-controller="myController">
+        <hr>
+        <h4>
+          2 way data binding via : ng-model</h4>
+        <input ng-model="message" type="text"/>
+        {{message}}
+      </div>
+      <hr>
+      <div class="" ng-controller="myController">
+        <h4>complex example of 2 way data binding</h4>
+        <table class="table1">
+          <tr>
+            <td>
+              First Name :
+            </td>
+            <td>
+               <input type="text" name="name" ng-model="employee.firstName">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Second Name :
+            </td>
+            <td>
+             <input type="text" name="name" ng-model="employee.secondName">
+            </td>
+          </tr>
+        </table>
+        <table class="table">
+          <tr>
+            <td>
+              First Name :
+            </td>
+            <td>
+              {{employee.firstName}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Second Name :
+            </td>
+            <td>
+              {{employee.secondName}}
+            </td>
+          </tr>
+        </table>
 
-     </div>
+      </div>
+
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="js/angular.min.js" charset="utf-8"></script>
-    <script src="js/script.js" charset="utf-8"></script>
+    <script charset="utf-8" src="js/angular.min.js"></script>
+    <script charset="utf-8" src="js/script.js"></script>
   </body>
 </html>
