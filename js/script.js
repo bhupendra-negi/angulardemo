@@ -95,14 +95,39 @@ myApp.controller("TechnologyController", function($scope) {
   $scope.technologies = technologies;
   // attaching angular evenst to scope object
   // technology object would be fetched from ng-repeat
-  $scope.incrementLikes = function(technology)
-  {
+  $scope.incrementLikes = function(technology) {
     technology.likes++;
   };
-  $scope.decrementLikes = function(technology)
-  {
+  $scope.decrementLikes = function(technology) {
     technology.disklikes++;
   };
+});
+// controller for filters to create model
+myApp.controller("FiltersController", function($scope) {
 
+  //creating employee data
+  var employees = [{
+    name: "Ram",
+    dob: new Date("January 23,1977"),
+    gender: "Male",
+    salary: 55000.78
+  }, {
+    name: "Shyam",
+    dob: new Date("January 23,1967"),
+    gender: "Male",
+    salary: 95000.78
+  }, {
+    name: "Seeta",
+    dob: new Date("January 23,1987"),
+    gender: "Female",
+    salary: 5000.78
+  }, {
+    name: "Geeta",
+    dob: new Date("January 23,1990"),
+    gender: "Female",
+    salary: 45000.78
+  }];
+  $scope.employees = employees;
+  $scope.rowlimit = 2;
 
 });

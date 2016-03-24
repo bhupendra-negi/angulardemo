@@ -175,7 +175,54 @@
         </table>
 
       </div>
+      <hr>
+      <div class="" ng-controller = "FiltersController">
+        <h4>Filters in Angular - format,filte,sort</h4>
+        No of Rows limit:
+        <input type="number" step ="1" min="0" max ="4" name="name" value="" ng-model ="rowlimit">
+        <br>
 
+        <table class="table-responsive table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <td>
+                Employee Name
+              </td>
+              <td>
+                Date of Birth
+              </td>
+              <td>
+                Gender
+              </td>
+              <td>
+                Salary (number)
+              </td>
+              <td>
+                Salary (currency)
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat = "employee in employees | limitTo:rowlimit">
+              <td>
+                {{employee.name | uppercase}}
+              </td>
+              <td>
+                {{employee.dob | date :"dd/MM/yyyy"}}
+              </td>
+              <td>
+                {{employee.gender | lowercase}}
+              </td>
+              <td>
+                {{employee.salary | number:2}}
+              </td>
+              <td>
+                {{employee.salary | currency:"&#8377":1}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
