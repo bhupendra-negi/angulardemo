@@ -130,6 +130,24 @@ myApp.controller("FiltersController", function($scope) {
   $scope.employees = employees;
   $scope.rowlimit = 2;
   //model for sorting records
-  $scope.sortorder = 'name';
+  $scope.sortColumn = 'name';
+  // code for bidirectional sort on click of table headers
+  $scope.reverseSort = false;
+  $scope.sortData = function (column)
+  {
+    $scope.reverseSort = ($scope.sortColumn == column)? !$scope.reverseSort : false;
+    $scope.sortColumn = column;
+  }
+  $scope.getSortClass = function(column)
+  {
+  if($scope.sortColumn == column)
+  {
+    return ($scope.reverseSort) ? "arrow-down" : "arrow-up" ;
+  }
+   else return '' // removes sorting icon from other
+  }
+
+
+
 
 });

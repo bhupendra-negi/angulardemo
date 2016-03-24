@@ -8,6 +8,7 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/myangular.css" media="screen" title="no title" charset="utf-8">
 
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
   </head>
@@ -182,34 +183,42 @@
         <input type="number" step ="1" min="0" max ="4" name="name" value="" ng-model ="rowlimit">
         <br>
          Sort Order :
-         <select class="" name="" ng-model="sortorder">
+         <select class="" name="" ng-model="sortColumn">
            <option value ="name">Name ASC </option>
            <option value ="dob"> DOB ASC </option>
            <option value = "-salary">SALARY DESC </option>
          </select>
+         <br>
+         Bi-directional Sort:Click on table headers
+
 
         <table class="table-responsive table-striped table-bordered table-condensed">
           <thead>
             <tr>
-              <td>
-                Employee Name
-              </td>
-              <td>
-                Date of Birth
-              </td>
-              <td>
-                Gender
-              </td>
-              <td>
-                Salary (number)
-              </td>
-              <td>
-                Salary (currency)
-              </td>
+              <th ng-click="sortData('name')">
+                Employee Name <div class="" ng-class = "getSortClass('name')">
+                </div>
+              </th>
+              <th ng-click="sortData('dob')">
+                Date of Birth <div class="" ng-class = "getSortClass('dob')">
+                </div>
+              </th>
+              <th ng-click="sortData('gender')">
+                Gender<div class="" ng-class = "getSortClass('gender')">
+                </div>
+              </th>
+              <th ng-click="sortData('salary')">
+                Salary (number) <div class="" ng-class = "getSortClass('salary')">
+                </div>
+              </th>
+              <th ng-click="sortData('salary')">
+                Salary (currency) <div class="" ng-class = "getSortClass('salary')">
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat = "employee in employees | orderBy:sortorder | limitTo:rowlimit  ">
+            <tr ng-repeat = "employee in employees | orderBy:sortColumn:reverseSort | limitTo:rowlimit  ">
               <td>
                 {{employee.name | uppercase}}
               </td>
