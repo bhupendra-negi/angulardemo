@@ -114,7 +114,18 @@
           </tr>
 
         </table>
+        <hr>
+        <h4>Nested ng-repeat directive</h4>
+        <ul>
+          <li ng-repeat="country in countries"> {{country.name}} - Index {{$index}}
+           <ul>
+             <li ng-repeat = "city in country.cities">
+              {{city.name}} - Parent Index {{$parent.$index}} - Index {{$index}}
+             </li>
+           </ul>
 
+          </li>
+        </ul>
       </div>
 
     </div>

@@ -37,5 +37,20 @@ myApp.controller("RepeatController", function($scope) {
   }];
 
   $scope.friends = friends;
+ // added complex ng-repeat directive
+
+ var countries = [
+{ name:"India",
+  cities:[{name:"Pune"},{name:"Dehradun"},{name:"Bangalore"}]
+},
+{ name:"US",
+  cities:[{name:"Los Angeles"},{name:"Chicago"},{name:"New York"}]
+},
+{ name:"Australia",
+  cities:[{name:"Adelaide"},{name:"Brisbrane"},{name:"Sydeny"}]
+}
+ ]
+ // add to model
+ $scope.countries = countries;
 
 });
