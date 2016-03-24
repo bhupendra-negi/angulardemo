@@ -37,20 +37,72 @@ myApp.controller("RepeatController", function($scope) {
   }];
 
   $scope.friends = friends;
- // added complex ng-repeat directive
+  // added complex ng-repeat directive
 
- var countries = [
-{ name:"India",
-  cities:[{name:"Pune"},{name:"Dehradun"},{name:"Bangalore"}]
-},
-{ name:"US",
-  cities:[{name:"Los Angeles"},{name:"Chicago"},{name:"New York"}]
-},
-{ name:"Australia",
-  cities:[{name:"Adelaide"},{name:"Brisbrane"},{name:"Sydeny"}]
-}
- ]
- // add to model
- $scope.countries = countries;
+  var countries = [{
+      name: "India",
+      cities: [{
+        name: "Pune"
+      }, {
+        name: "Dehradun"
+      }, {
+        name: "Bangalore"
+      }]
+    }, {
+      name: "US",
+      cities: [{
+        name: "Los Angeles"
+      }, {
+        name: "Chicago"
+      }, {
+        name: "New York"
+      }]
+    }, {
+      name: "Australia",
+      cities: [{
+        name: "Adelaide"
+      }, {
+        name: "Brisbrane"
+      }, {
+        name: "Sydeny"
+      }]
+    }]
+    // add to model
+  $scope.countries = countries;
+});
+// controller for angualr events ng-click
+
+myApp.controller("TechnologyController", function($scope) {
+
+  var technologies = [{
+    name: "PHP",
+    likes: 0,
+    disklikes: 0
+  }, {
+    name: "ASP.NET",
+    likes: 0,
+    disklikes: 0
+  }, {
+    name: "JAVA",
+    likes: 0,
+    disklikes: 0
+  }, {
+    name: "NODE.js",
+    likes: 0,
+    disklikes: 0
+  }];
+
+  $scope.technologies = technologies;
+  // attaching angular evenst to scope object
+  // technology object would be fetched from ng-repeat
+  $scope.incrementLikes = function(technology)
+  {
+    technology.likes++;
+  };
+  $scope.decrementLikes = function(technology)
+  {
+    technology.disklikes++;
+  };
+
 
 });

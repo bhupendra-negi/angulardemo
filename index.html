@@ -59,7 +59,7 @@
               First Name :
             </td>
             <td>
-               <input type="text" name="name" ng-model="employee.firstName">
+              <input type="text" name="name" ng-model="employee.firstName">
             </td>
           </tr>
           <tr>
@@ -67,7 +67,7 @@
               Second Name :
             </td>
             <td>
-             <input type="text" name="name" ng-model="employee.secondName">
+              <input type="text" name="name" ng-model="employee.secondName">
             </td>
           </tr>
         </table>
@@ -92,10 +92,11 @@
 
       </div>
 
-      <div class="" ng-controller = "RepeatController">
+      <div class="" ng-controller="RepeatController">
         <hr>
-        <h4> Simple ng-repeat directive</h4>
-        <table class = "table-responsive table-striped table-bordered table-condensed">
+        <h4>
+          Simple ng-repeat directive</h4>
+        <table class="table-responsive table-striped table-bordered table-condensed">
           <thead>
             <th>
               Friend
@@ -105,27 +106,74 @@
             </th>
           </thead>
           <tr ng-repeat="f in friends">
-             <td>
-               {{f.name}}
-             </td>
-             <td>
-               {{f.city}}
-             </td>
+            <td>
+              {{f.name}}
+            </td>
+            <td>
+              {{f.city}}
+            </td>
           </tr>
 
         </table>
         <hr>
         <h4>Nested ng-repeat directive</h4>
         <ul>
-          <li ng-repeat="country in countries"> {{country.name}} - Index {{$index}}
-           <ul>
-             <li ng-repeat = "city in country.cities">
-              {{city.name}} - Parent Index {{$parent.$index}} - Index {{$index}}
-             </li>
-           </ul>
+          <li ng-repeat="country in countries">
+            {{country.name}}
+            - Index
+            {{$index}}
+            <ul>
+              <li ng-repeat="city in country.cities">
+                {{city.name}}
+                - Parent Index
+                {{$parent.$index}}
+                - Index
+                {{$index}}
+              </li>
+            </ul>
 
           </li>
         </ul>
+      </div>
+      <hr>
+      <div class="" ng-controller="TechnologyController">
+        <h4>
+          Angular Events Demo ng-click
+        </h4>
+        <table class="table-responsive table-striped table-bordered table-condensed">
+          <thead>
+            <th>
+              Technology
+            </th>
+            <th>
+              Likes
+            </th>
+            <th>
+              Dislikes
+            </th>
+            <th>
+              Like/Dislike
+            </th>
+            <tr ng-repeat="technology in technologies">
+              <td>
+                {{technology.name}}
+              </td>
+              <td>
+                {{technology.likes}}
+              </td>
+              <td>
+                {{technology.disklikes}}
+              </td>
+              <td>
+                <input type="button" name="btnLike" value="Like" ng-click="incrementLikes(technology)">
+                <input type="button" name="btnDislike" value="Dislike" ng-click="decrementLikes(technology)">
+              </td>
+
+            </tr>
+          </thead>
+
+        </table>
+
       </div>
 
     </div>
