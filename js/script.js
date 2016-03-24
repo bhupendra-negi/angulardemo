@@ -112,12 +112,12 @@ myApp.controller("FiltersController", function($scope) {
     gender: "Male",
     salary: 55000.78
   }, {
-    name: "Shyam",
+    name: "Zuzu",
     dob: new Date("January 23,1967"),
     gender: "Male",
     salary: 95000.78
   }, {
-    name: "Seeta",
+    name: "Askar",
     dob: new Date("January 23,1987"),
     gender: "Female",
     salary: 5000.78
@@ -129,5 +129,7 @@ myApp.controller("FiltersController", function($scope) {
   }];
   $scope.employees = employees;
   $scope.rowlimit = 2;
+  //model for sorting records
+  $scope.sortorder = 'name';
 
 });

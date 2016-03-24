@@ -177,10 +177,16 @@
       </div>
       <hr>
       <div class="" ng-controller = "FiltersController">
-        <h4>Filters in Angular - format,filte,sort</h4>
+        <h4>Filters in Angular - format,filter,sort</h4>
         No of Rows limit:
         <input type="number" step ="1" min="0" max ="4" name="name" value="" ng-model ="rowlimit">
         <br>
+         Sort Order :
+         <select class="" name="" ng-model="sortorder">
+           <option value ="name">Name ASC </option>
+           <option value ="dob"> DOB ASC </option>
+           <option value = "-salary">SALARY DESC </option>
+         </select>
 
         <table class="table-responsive table-striped table-bordered table-condensed">
           <thead>
@@ -203,7 +209,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat = "employee in employees | limitTo:rowlimit">
+            <tr ng-repeat = "employee in employees | orderBy:sortorder | limitTo:rowlimit  ">
               <td>
                 {{employee.name | uppercase}}
               </td>
