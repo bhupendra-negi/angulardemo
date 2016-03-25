@@ -188,7 +188,7 @@
           <input type="checkbox" ng-model = "exactMatch"> : Exact Match
          <br>
          Combo search
-         <input type="text" placeholder = "Search name & gender" ng-model="searchText">
+         <input type="text" placeholder = "Search name & gender" ng-model = "searchText">
 
          <br>
         No of Rows limit:
@@ -251,11 +251,47 @@
           </tbody>
         </table>
       </div>
+
+      <div class="" ng-controller = "CustomFilterController">
+       <hr>
+        <h4> Custom Filters in Angular.js</h4>
+        <table class="table-responsive table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                Gender
+              </th>
+              <th>
+                Salary
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat = "employee in employees">
+              <td>
+                {{employee.name}}
+              </td>
+              <td>
+                {{employee.gender | gender}}
+              </td>
+              <td>
+                {{employee.salary}}
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script charset="utf-8" src="js/angular.min.js"></script>
     <script charset="utf-8" src="js/script.js"></script>
+    <script src="js/filters.js" charset="utf-8"></script>
   </body>
 </html>

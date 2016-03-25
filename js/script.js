@@ -170,3 +170,25 @@ myApp.controller("FiltersController", function($scope) {
 
 
 });
+// custom filter controller
+myApp.controller("CustomFilterController", function($scope) {
+
+  var employees = [{
+    name: "Ram",
+    gender: 1,
+    salary: 55000.78
+  }, {
+    name: "Zuzu",
+    gender: 3,
+    salary: 95000.78
+  }, {
+    name: "Askar",
+    gender: 1,
+    salary: 5000.78
+  }, {
+    name: "Geeta",
+    gender: 2,
+    salary: 45000.78
+  }];
+  $scope.employees = employees;
+});
