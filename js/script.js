@@ -146,6 +146,25 @@ myApp.controller("FiltersController", function($scope) {
   }
    else return '' // removes sorting icon from other
   }
+  // adding filtering function to filter not in all columns
+  $scope.search = function(item)
+  {
+    if ($scope.searchText === undefined) return true;
+    else {
+       if  (item.name.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 )
+       { console.log(item);
+         return true;
+
+       }
+       if (item.gender.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 )
+       {
+         return true;
+       }
+
+    }
+     return false;
+
+  }
 
 
 

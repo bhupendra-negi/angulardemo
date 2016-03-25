@@ -181,7 +181,15 @@
         <h4>Filters in Angular - format,filter,sort</h4>
          <br>
          Search Filters :
-         <input type="text" placeholder = "Search across all columns" ng-model = "searchText" value="">
+         <!-- <input type="text" placeholder = "Search across all columns" ng-model = "searchText" value=""> -->
+         <br>
+         <input type="text" placeholder = "Search Name"  ng-model = "searchText1.name">
+         <input type="text" placeholder = "Search Gender"  ng-model = "searchText1.gender">
+          <input type="checkbox" ng-model = "exactMatch"> : Exact Match
+         <br>
+         Combo search
+         <input type="text" placeholder = "Search name & gender" ng-model="searchText">
+
          <br>
         No of Rows limit:
         <input type="number" step ="1" min="0" max ="4" name="name" value="" ng-model ="rowlimit">
@@ -222,7 +230,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat = "employee in employees | orderBy:sortColumn:reverseSort | limitTo:rowlimit | filter:searchText ">
+            <tr ng-repeat = "employee in employees | orderBy:sortColumn:reverseSort | limitTo:rowlimit | filter:search ">
+              <!--  filter:searchText:exactMatch -->
               <td>
                 {{employee.name | uppercase}}
               </td>
