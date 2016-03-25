@@ -191,4 +191,5 @@ myApp.controller("CustomFilterController", function($scope) {
     salary: 45000.78
   }];
   $scope.employees = employees;
+  
 });
