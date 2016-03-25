@@ -179,6 +179,10 @@
       <hr>
       <div class="" ng-controller = "FiltersController">
         <h4>Filters in Angular - format,filter,sort</h4>
+         <br>
+         Search Filters :
+         <input type="text" placeholder = "Search across all columns" ng-model = "searchText" value="">
+         <br>
         No of Rows limit:
         <input type="number" step ="1" min="0" max ="4" name="name" value="" ng-model ="rowlimit">
         <br>
@@ -218,7 +222,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat = "employee in employees | orderBy:sortColumn:reverseSort | limitTo:rowlimit  ">
+            <tr ng-repeat = "employee in employees | orderBy:sortColumn:reverseSort | limitTo:rowlimit | filter:searchText ">
               <td>
                 {{employee.name | uppercase}}
               </td>
